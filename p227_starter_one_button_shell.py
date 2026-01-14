@@ -38,13 +38,19 @@ def mSave():
   
   file.write(text_to_save)
   file.close()
-    
+
+def Submit():
+    res = messagebox.askquestion("POP UP BOX",
+        "Are you sure?")
+    if res == "yes":
+        do_command("ping")
+
 root = tk.Tk()
 frame = tk.Frame(root)
 frame.pack()
 
 # set up button to run the do_command function
-ping_btn = tk.Button(frame, text="Ping", command=lambda:do_command("ping"))
+ping_btn = tk.Button(frame, text="Ping", command=lambda:Submit())
 ping_btn.pack()
 
 
@@ -58,7 +64,7 @@ url_label = tk.Label(frame_URL, text="Enter a URL of interest: ",
     font=("Times New Roman", 14),
     bd=0, 
     relief=tk.FLAT, 
-    cursor="heart",
+    cursor="gumby",
     fg="mediumpurple",
     bg="black")
 url_label.pack(side=tk.LEFT)
