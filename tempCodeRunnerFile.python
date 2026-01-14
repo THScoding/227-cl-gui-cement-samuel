@@ -9,8 +9,7 @@ def run_ping():
         return
 
     output_text.delete(1.0, tk.END)
-
-    try:
+f    try:
         result = subprocess.check_output(
             ["ping", "-n", "4", domain],
             universal_newlines=True,
