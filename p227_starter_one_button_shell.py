@@ -41,8 +41,8 @@ def mSave():
 
 def Submit(command):
     res = messagebox.askquestion(
-        "Confirm Command",
-        f"Are you sure you want to run '{command}'?"
+        "Confirm Domain",
+        f"Are you sure this is the right domain?"
     )
     if res == "yes":
         do_command(command)
@@ -84,6 +84,8 @@ nslookup_btn = tk.Button(
     activebackground="purple"
 )
 nslookup_btn.pack(side=tk.LEFT, padx=5)
+
+
 
 # creates the frame with label for the text box
 frame_URL = tk.Frame(root, pady=10,  bg="black") # change frame color
