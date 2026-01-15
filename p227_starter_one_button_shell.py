@@ -78,6 +78,13 @@ frame.pack()
 command_textbox = tksc.ScrolledText(frame, height=10, width=100)
 command_textbox.pack()
 
+#CHECKBUTTON
+#Create frame and function for CheckButton, place it next to ping
+
+
+#IP_CONFIG
+#Create Frame and make a function that isn't meant to use URL like the do_button. place it to the left or the right to ping
+#Make sure that it has the output
 
 
 root.mainloop()
