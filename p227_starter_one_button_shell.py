@@ -39,11 +39,13 @@ def mSave():
   file.write(text_to_save)
   file.close()
 
-def Submit():
-    res = messagebox.askquestion("Confirm Domain",
-        "Are you sure this is the right domain?")
+def Submit(command):
+    res = messagebox.askquestion(
+        "Confirm Command",
+        f"Are you sure you want to run '{command}'?"
+    )
     if res == "yes":
-        do_command("ping")
+        do_command(command)
 
 root = tk.Tk()
 frame = tk.Frame(root)
@@ -56,7 +58,7 @@ btn_frame.pack(pady=10)
 ping_btn = tk.Button(
     btn_frame,
     text="Ping",
-    command=lambda: do_command("ping"),
+    command=lambda: Submit("ping"),
     font=("Times New Roman", 12),
     bg="red",
     activebackground="purple"
@@ -66,7 +68,7 @@ ping_btn.pack(side=tk.LEFT, padx=5)
 tracert_btn = tk.Button(
     btn_frame,
     text="Tracert",
-    command=lambda: do_command("tracert"),
+    command=lambda: Submit("tracert"),
     font=("Times New Roman", 12),
     bg="purple2",
     activebackground="purple"
@@ -76,7 +78,7 @@ tracert_btn.pack(side=tk.LEFT, padx=5)
 nslookup_btn = tk.Button(
     btn_frame,
     text="Nslookup",
-    command=lambda: do_command("nslookup"),
+    command=lambda: Submit("nslookup"),
     font=("Times New Roman", 12),
     bg="blue",
     activebackground="purple"
