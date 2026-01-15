@@ -40,8 +40,8 @@ def mSave():
   file.close()
 
 def Submit():
-    res = messagebox.askquestion("POP UP BOX",
-        "Are you sure?")
+    res = messagebox.askquestion("Confirm Domain",
+        "Are you sure this is the right domain?")
     if res == "yes":
         do_command("ping")
 
@@ -50,9 +50,15 @@ frame = tk.Frame(root)
 frame.pack()
 
 # set up button to run the do_command function
-ping_btn = tk.Button(frame, text="Ping", command=lambda:Submit())
-ping_btn.pack()
-
+ping_btn = tk.Button(frame, text="Check to see if a URL is up and active", 
+    command=lambda:do_command("ping"),
+    compound="center",
+    font=("times new roman", 12),
+    bd=0, 
+    relief="flat",
+    cursor="gumby",
+    bg="white", activebackground="purple")
+ping_btn.pack() 
 
 
 # creates the frame with label for the text box
@@ -79,8 +85,6 @@ frame.pack()
 command_textbox = tksc.ScrolledText(frame, height=10, width=100)
 command_textbox.pack()
 
-#CHECKBUTTON
-#Create frame and function for CheckButton, place it next to ping
 
 
 #IP_CONFIG
