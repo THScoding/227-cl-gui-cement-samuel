@@ -54,6 +54,7 @@ ping_btn = tk.Button(frame, text="Ping", command=lambda:Submit())
 ping_btn.pack()
 
 
+
 # creates the frame with label for the text box
 frame_URL = tk.Frame(root, pady=10,  bg="black") # change frame color
 frame_URL.pack()
@@ -86,5 +87,7 @@ command_textbox.pack()
 #Create Frame and make a function that isn't meant to use URL like the do_button. place it to the left or the right to ping
 #Make sure that it has the output
 
+save_btn = tk.Button(frame, text="Save", command=mSave)
+save_btn.pack()
 
 root.mainloop()
