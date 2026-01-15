@@ -58,7 +58,7 @@ ping_btn = tk.Button(
     text="Ping",
     command=lambda: do_command("ping"),
     font=("Times New Roman", 12),
-    bg="white",
+    bg="red",
     activebackground="purple"
 )
 ping_btn.pack(side=tk.LEFT, padx=5)
@@ -68,7 +68,7 @@ tracert_btn = tk.Button(
     text="Tracert",
     command=lambda: do_command("tracert"),
     font=("Times New Roman", 12),
-    bg="white",
+    bg="purple2",
     activebackground="purple"
 )
 tracert_btn.pack(side=tk.LEFT, padx=5)
@@ -78,7 +78,7 @@ nslookup_btn = tk.Button(
     text="Nslookup",
     command=lambda: do_command("nslookup"),
     font=("Times New Roman", 12),
-    bg="white",
+    bg="blue",
     activebackground="purple"
 )
 nslookup_btn.pack(side=tk.LEFT, padx=5)
@@ -107,6 +107,10 @@ frame.pack()
 command_textbox = tksc.ScrolledText(frame, height=10, width=100)
 command_textbox.pack()
 
+
+
+#CHECKBUTTON
+#Create frame and function for CheckButton, place it next to ping
 
 
 #IP_CONFIG
