@@ -38,22 +38,39 @@ def mSave():
   
   file.write(text_to_save)
   file.close()
-
+  
+  
 def Submit(command):
-    res = messagebox.askquestion(
-        "Confirm Domain",
-        f"Are you sure this is the right domain?"
-    )
-    if res == "yes":
-        do_command(command)
+    if confirm_var.get():
+        res = messagebox.askquestion(
+            "Confirm Command",
+            f"Are you sure you want to run '{command}'?"
+        )
+        if res != "yes":
+            return
+    do_command(command)
+
 
 root = tk.Tk()
+confirm_var = tk.BooleanVar(value=True)
 frame = tk.Frame(root)
 frame.pack()
 
 # set up buttons to run commands
 btn_frame = tk.Frame(root, bg="black")
 btn_frame.pack(pady=10)
+
+confirm_cb = tk.Checkbutton(
+    btn_frame,
+    text="Confirm",
+    variable=confirm_var,
+    bg="black",
+    fg="white",
+    selectcolor="black",
+    font=("Times New Roman", 11)
+)
+confirm_cb.pack(side=tk.LEFT, padx=10)
+
 
 ping_btn = tk.Button(
     btn_frame,
