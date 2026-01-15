@@ -49,17 +49,39 @@ root = tk.Tk()
 frame = tk.Frame(root)
 frame.pack()
 
-# set up button to run the do_command function
-ping_btn = tk.Button(frame, text="Check to see if a URL is up and active", 
-    command=lambda:do_command("ping"),
-    compound="center",
-    font=("times new roman", 12),
-    bd=0, 
-    relief="flat",
-    cursor="gumby",
-    bg="white", activebackground="purple")
-ping_btn.pack() 
+# set up buttons to run commands
+btn_frame = tk.Frame(root, bg="black")
+btn_frame.pack(pady=10)
 
+ping_btn = tk.Button(
+    btn_frame,
+    text="Ping",
+    command=lambda: do_command("ping"),
+    font=("Times New Roman", 12),
+    bg="white",
+    activebackground="purple"
+)
+ping_btn.pack(side=tk.LEFT, padx=5)
+
+tracert_btn = tk.Button(
+    btn_frame,
+    text="Tracert",
+    command=lambda: do_command("tracert"),
+    font=("Times New Roman", 12),
+    bg="white",
+    activebackground="purple"
+)
+tracert_btn.pack(side=tk.LEFT, padx=5)
+
+nslookup_btn = tk.Button(
+    btn_frame,
+    text="Nslookup",
+    command=lambda: do_command("nslookup"),
+    font=("Times New Roman", 12),
+    bg="white",
+    activebackground="purple"
+)
+nslookup_btn.pack(side=tk.LEFT, padx=5)
 
 # creates the frame with label for the text box
 frame_URL = tk.Frame(root, pady=10,  bg="black") # change frame color
