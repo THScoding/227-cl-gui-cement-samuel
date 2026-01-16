@@ -1,53 +1,56 @@
-BEGIN
+START
+
+Create window
+
+Create checkbox called Confirm (checked by default)
+
+Create buttons:
+
+Ping
+
+Tracert
+
+Nslookup
+
+IPConfig
+
+Create text box to enter URL
+Create output text box
+Create Save button
 
 FUNCTION DoCommand(command)
-    IF URL box is empty THEN
-        target ← localhost
-    ELSE
-        target ← URL from box
-    END IF
+If command needs a URL
 
-    Clear output box
-    Display "command working..."
+If URL box is empty
 
-    Run command with target
-    Display command output in output box
-END FUNCTION
+Use localhost
+
+Else
+
+Use URL from box
+
+Clear output box
+Show “command working…”
+Run command
+Display results in output box
 
 FUNCTION Submit(command)
-    IF Confirm checkbox is checked THEN
-        Ask user to confirm
-        IF user selects NO THEN
-            RETURN
-        END IF
-    END IF
+If Confirm checkbox is checked
 
-    DoCommand(command)
-END FUNCTION
+Ask user “Are you sure?”
+
+If user says NO
+
+Stop
+
+Run DoCommand(command)
 
 FUNCTION SaveOutput
-    Ask user for filename
-    IF user cancels THEN
-        RETURN
-    END IF
+Ask user for filename
+If user cancels
 
-    Save output box text to file
-END FUNCTION
+Stop
 
-Create main window
+Save output text to file
 
-Create Confirm checkbox (checked by default)
-
-Create Ping button → Submit("ping")
-Create Tracert button → Submit("tracert")
-Create Nslookup button → Submit("nslookup")
-
-Create URL input box
-
-Create output text box
-
-Create Save button → SaveOutput
-
-Wait for user actions
-
-END
+Wait for user to click buttons
