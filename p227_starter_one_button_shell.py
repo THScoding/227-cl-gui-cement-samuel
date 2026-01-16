@@ -61,25 +61,34 @@ def retreive_url():
     url = url_entry.get()
     return url
 
-# Modify the do_command function:
-# to use the new button as needed
 def do_command(command):
     global command_textbox
-    
-      # If url_entry is blank, use localhost IP address 
-    url_val = url_entry.get()
-    if (len(url_val) == 0):
-        # url_val = "127.0.0.1"
-        url_val = "::1"
-    
+
     command_textbox.delete(1.0, tk.END)
     command_textbox.insert(tk.END, command + " working....\n")
     command_textbox.update()
 
-    with subprocess.Popen(command + ' ' + url_val, stdout=subprocess.PIPE, bufsize=1, universal_newlines=True) as p:
+    # Commands that do NOT use a URL
+    no_url_commands = ["ipconfig"]
+
+    if command in no_url_commands:
+        full_command = command
+    else:
+        url_val = url_entry.get()
+        if len(url_val) == 0:
+            url_val = "::1"
+        full_command = command + " " + url_val
+
+    with subprocess.Popen(
+        full_command,
+        stdout=subprocess.PIPE,
+        bufsize=1,
+        universal_newlines=True
+    ) as p:
         for line in p.stdout:
-            command_textbox.insert(tk.END,line)
+            command_textbox.insert(tk.END, line)
             command_textbox.update()
+
             
 def mSave():
   filename = asksaveasfilename(defaultextension='.txt',filetypes = (('Text files', '*.txt'),('Python files', '*.py *.pyw'),('All files', '*.*')))
@@ -152,6 +161,17 @@ nslookup_btn = tk.Button(
     activebackground="purple"
 )
 nslookup_btn.pack(side=tk.LEFT, padx=5)
+
+ipconfig_btn = tk.Button(
+    btn_frame,
+    text="IPConfig",
+    command=lambda: Submit("ipconfig"),
+    font=("Times New Roman", 12),
+    bg="White",
+    activebackground="purple"
+)
+ipconfig_btn.pack(side=tk.LEFT, padx=5)
+
 
 
 

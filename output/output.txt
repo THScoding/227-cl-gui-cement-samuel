@@ -1,13 +1,15 @@
-ping working....
+tracert working....
 
-Pinging my.pltw.org [104.18.124.225] with 32 bytes of data:
-Reply from 104.18.124.225: bytes=32 time=28ms TTL=54
-Reply from 104.18.124.225: bytes=32 time=9ms TTL=54
-Reply from 104.18.124.225: bytes=32 time=80ms TTL=54
-Reply from 104.18.124.225: bytes=32 time=21ms TTL=54
+Tracing route to jason.com [15.197.225.128]
+over a maximum of 30 hops:
 
-Ping statistics for 104.18.124.225:
-    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-Approximate round trip times in milli-seconds:
-    Minimum = 9ms, Maximum = 80ms, Average = 34ms
+  1     4 ms     *       84 ms  10.223.144.1 
+  2    31 ms    15 ms    10 ms  10.230.55.129 
+  3     8 ms    14 ms    18 ms  10.230.55.19 
+  4     6 ms     9 ms     7 ms  10.230.1.1 
+  5     9 ms     8 ms    10 ms  209-129-239-1.scoe.org [209.129.239.1] 
+  6     4 ms     4 ms     5 ms  dc-son-coe-2--soncoe-gw.cenic.net [137.164.13.77] 
+  7    10 ms     9 ms     8 ms  dc-oak-agg8--son-coe-2--10g-1.cenic.net [137.164.1.0] 
+  8     7 ms     7 ms    10 ms  svl-agg10--emvl1-agg-01--400g--01.cenic.net [137.164.11.94] 
+  9     *        *        *     Request timed out.
 
