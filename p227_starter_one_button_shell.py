@@ -75,7 +75,7 @@ confirm_cb = tk.Checkbutton(
     bg="black",
     fg="white",
     selectcolor="black",
-    font=("Times New Roman", 11)
+    font=("Times New Roman", 14)
 )
 confirm_cb.pack(side=tk.LEFT, padx=10)
 
@@ -84,9 +84,9 @@ ping_btn = tk.Button(
     btn_frame,
     text="Ping",
     command=lambda: Submit("ping"),
-    font=("Times New Roman", 12),
+    font=("Times New Roman", 14),
     bg="red",
-    activebackground="purple"
+    activebackground="blue"
 )
 ping_btn.pack(side=tk.LEFT, padx=5)
 
@@ -94,9 +94,9 @@ tracert_btn = tk.Button(
     btn_frame,
     text="Tracert",
     command=lambda: Submit("tracert"),
-    font=("Times New Roman", 12),
+    font=("Times New Roman", 14),
     bg="purple2",
-    activebackground="purple"
+    activebackground="green2"
 )
 tracert_btn.pack(side=tk.LEFT, padx=5)
 
@@ -104,9 +104,9 @@ nslookup_btn = tk.Button(
     btn_frame,
     text="Nslookup",
     command=lambda: Submit("nslookup"),
-    font=("Times New Roman", 12),
+    font=("Times New Roman", 14),
     bg="blue",
-    activebackground="purple"
+    activebackground="red"
 )
 nslookup_btn.pack(side=tk.LEFT, padx=5)
 
@@ -114,9 +114,9 @@ ipconfig_btn = tk.Button(
     btn_frame,
     text="IPConfig",
     command=lambda: Submit("ipconfig"),
-    font=("Times New Roman", 12),
+    font=("Times New Roman", 14),
     bg="teal",
-    activebackground="purple"
+    activebackground="green2"
 )
 ipconfig_btn.pack(side=tk.LEFT, padx=5)
 
@@ -130,7 +130,7 @@ frame_URL.pack()
 # decorative label
 url_label = tk.Label(frame_URL, text="Enter a URL of interest: ", 
     compound="center",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 20),
     bd=0, 
     relief=tk.FLAT, 
     cursor="gumby",
