@@ -39,7 +39,6 @@ def mSave():
   file.write(text_to_save)
   file.close()
   
-  
 def Submit(command):
     if confirm_var.get():
         res = messagebox.askquestion(
