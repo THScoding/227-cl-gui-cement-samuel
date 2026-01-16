@@ -115,7 +115,7 @@ ipconfig_btn = tk.Button(
     text="IPConfig",
     command=lambda: Submit("ipconfig"),
     font=("Times New Roman", 12),
-    bg="White",
+    bg="teal",
     activebackground="purple"
 )
 ipconfig_btn.pack(side=tk.LEFT, padx=5)
