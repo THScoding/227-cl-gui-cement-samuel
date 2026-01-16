@@ -147,9 +147,18 @@ frame.pack()
 command_textbox = tksc.ScrolledText(frame, height=10, width=100)
 command_textbox.pack()
 
+#Create Save button
 
-
-save_btn = tk.Button(frame, text="Save", command=mSave)
+save_btn = tk.Button(
+    frame,
+    text="Save",
+    command=mSave,
+    bg="#39FF14",          # neon green
+    activebackground="#2BFF00",
+    fg="black",
+    font=("Times New Roman", 12, "bold")
+)
 save_btn.pack()
+
 
 root.mainloop()
